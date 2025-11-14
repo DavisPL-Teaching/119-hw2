@@ -269,13 +269,13 @@ You will need a new load_input function.
 Notes:
 - The functions q8_a and q8_b don't have input parameters; they should call
   load_input_bigger directly.
-- If you are unable to run up to 100 million on your machine in a reasonable
-  amount of time, please change the input to 10 million instead of 100 million.
+- Please ensure that each of q8a and q8b runs in at most 3 minutes.
+- If you are unable to run up to 100 million on your machine within the time
+  limit, please change the input to 10 million instead of 100 million.
   If it is still taking too long even for that,
   you may need to change the number of partitions.
-  For example a student found that setting number of partitions to 100
+  For example, one student found that setting number of partitions to 100
   helped speed it up.
-
 """
 
 def load_input_bigger():
@@ -301,7 +301,7 @@ def q8_b():
 """
 Discussion questions
 
-9. State the values of k1, v1, k2, and v2 for your Q6 and Q7 pipelines.
+9. State what types you used for k1, v1, k2, and v2 for your Q6 and Q7 pipelines.
 
 === ANSWER Q9 BELOW ===
 
