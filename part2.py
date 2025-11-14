@@ -9,7 +9,10 @@ Save your graph in output/part2.png.
 
 Your dataflow graph should have one node for:
 
-- Each different data source (load_input function), labeled with the source name
+- Each different data source (load_input function), labeled with the source name.
+
+  Consider two data sources to be different even if they are the same dataset
+  with two different levels of parallelism! (This applies to Q16.)
 
 - Each intermediate transformation or action on an RDD -- in particular,
    you should include one node for each call to general_map and general_reduce.
@@ -27,11 +30,15 @@ Your dataflow graph should have one node for:
 - You don't need to draw nodes for the unit tests (test_general_map and
    test_general_reduce) or for the final pipeline (PART_1_PIPELINE).
 
+- Draw .collect() and sorted() as their own nodes where present.
+
 - Important: if you have multiple pipelines that share the same intermediate computations on the same intermediate data,
-   you should draw these as only one node/task (for the shared parts), not multiple
+   you should draw these as exactly one node/task (for the shared parts), not multiple
    nodes/tasks.
    (For example, q4 and q5 both use the same input, so they should share at least the
    load_input node.)
+
+   **In other words:** Two operators in your graph should be drawn as the same node only if they compute exactly the same data transformation (or action) on exactly the same input data (and partitioned/parallelized in exactly the same way).
 
 === Grading Notes ===
 
@@ -47,9 +54,12 @@ be a PNG image. Feel free to take a screenshot to get to a PNG (as long as the w
    draw.io
    Microsoft PowerPoint
 
-- A hand-drawn graph is OK as well, as long as it is legible.
+- A hand-drawn graph is OK as well if it is drawn carefully and legibly!
+  If you take this route, please take care to re-draw everything carefully
+  on a separate page once you have figured out the layout. It should be visually
+  clear (no scribbles, crossed out nodes, unclear arrows, etc.) - make it look nice!
 
-- To assign your score, we will manually look at your graph image to see if it is correct and well-labeled. The exact set of nodes may differ slightly between submissions, but there are some important general features/general structures that we will look for.
+- To assign your score, we will manually look at your graph image to see if it is correct and well-labeled. In some cases, the exact set of nodes may differ slightly between submissions, but there are some important general features/general structures that we will look for that should be present.
 """
 
 if __name__ == '__main__':

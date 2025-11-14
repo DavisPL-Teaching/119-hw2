@@ -186,6 +186,8 @@ def q4(rdd):
 """
 Now use the general_map and general_reduce functions to answer the following questions.
 
+For Q5-Q7, your answers should use general_map and general_reduce as much as possible (wherever possible): you will still need a single .map call at the beginning (to convert the RDD into key, value pairs), but after that point, you should only use general_map and general_reduce.
+
 5. Among the numbers from 1 to 1 million, what is the average value?
 """
 
@@ -224,6 +226,10 @@ With what frequency?
 
 For this part, you will need a helper function that computes
 the English name for a number.
+
+Please implement this without using an external library!
+You should write this from scratch in Python.
+
 Examples:
 
     0 = zero
@@ -240,11 +246,10 @@ Notes:
 - For "least frequent", count only letters which occur,
   not letters which don't occur.
 - Please ignore spaces and hyphens.
-- Use lowercase letters.
-- The word "and" should always appear after the "hundred" part (where present),
-  but nowhere else.
-  (Note the 1001 case above which differs from some other implementations.)
-- Please implement this without using an external library such as `inflect`.
+- Use all lowercase letters.
+- The word "and" should only appear after the "hundred" part, and nowhere else.
+  It should appear after the hundreds if there are tens or ones in the same block.
+  (Note the 1001 case above which differs from some other implementations!)
 """
 
 # *** Define helper function(s) here ***
@@ -260,6 +265,17 @@ def q7(rdd):
 
 Make a version of both pipelines from Q6 and Q7 for this case.
 You will need a new load_input function.
+
+Notes:
+- The functions q8_a and q8_b don't have input parameters; they should call
+  load_input_bigger directly.
+- If you are unable to run up to 100 million on your machine in a reasonable
+  amount of time, please change the input to 10 million instead of 100 million.
+  If it is still taking too long even for that,
+  you may need to change the number of partitions.
+  For example a student found that setting number of partitions to 100
+  helped speed it up.
+
 """
 
 def load_input_bigger():
@@ -310,7 +326,8 @@ This can happen if the map stage returns an empty list (for all keys).
 Demonstrate this edge case by creating a specific pipeline which uses
 our data set from Q4. It should use the general_map and general_reduce functions.
 
-Output a set of (key, value) pairs after the reduce stage.
+For Q11, Q14, and Q16:
+your answer should return a Python set of (key, value) pairs after the reduce stage.
 """
 
 def q11(rdd):

@@ -111,7 +111,7 @@ MapReduce is batch processing, so all input rows are processed as a batch
 and the latency of any individual input row is the same as the latency of the entire dataset.
 That is why we are assuming the latency will just be the running time of the entire dataset.
 
-- Set `NUM_RUNS` to `1` if you haven't already. Note that this will make the values for low numbers (like `N=1`, `N=10`, and `N=100`) vary quite unpredictably.
+- Please set `NUM_RUNS` to `1` if you haven't already. Note that this will make the values for low numbers (like `N=1`, `N=10`, and `N=100`) vary quite unpredictably.
 """
 
 # Copy in ThroughputHelper and LatencyHelper
@@ -158,12 +158,19 @@ if you believe that different overheads are relevant for these different scenari
 
 === Grading notes ===
 
-Don't forget to fill out the entrypoint below before submitting your code!
+- Don't forget to fill out the entrypoint below before submitting your code!
 Running python3 part3.py should work and should re-generate all of your plots in output/.
 
-In the reflection, please write at least a paragraph for each question. (5 sentences each)
+- You should modify the code for `part1.py` directly. Make sure that your `python3 part1.py` still runs and gets the same output as before!
 
-Please include specific numbers in your reflection (particularly for Q2).
+- Your larger cases may take a while to run, but they should not take any
+  longer than 30 minutes (half an hour).
+  You should be including only up to N=1_000_000 in the list above,
+  make sure you aren't running the N=10_000_000 case.
+
+- In the reflection, please write at least a paragraph for each question. (5 sentences each)
+
+- Please include specific numbers in your reflection (particularly for Q2).
 
 === Entrypoint ===
 """
