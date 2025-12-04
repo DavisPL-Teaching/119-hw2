@@ -3,7 +3,7 @@ Part 2: Dataflow Graph
 
 For this part, draw a dataflow graph for your pipeline from Part 1.
 
-Save your graph in output/part2.png.
+Please save your graph in a single file called output/part2.png, output/part2.jpg, output/part2.jpeg, or output/part2.pdf.
 
 === Instructions for Drawing the Graph ===
 
@@ -45,9 +45,11 @@ Your dataflow graph should have one node for:
 Please follow the following additional grading notes:
 
 - Include your answer in a single image, output/part2.png.
+  If your graph is a JPG or PDF, output/part2.jpg, output/part2.pdf are also OK.
+  Don't save the graph using other extensions or multiple files.
 
 - You can draw the dataflow graph however you like, but it must
-be a PNG image. Feel free to take a screenshot to get to a PNG (as long as the writing is legible).
+  be a PNG, JPG, or PDF at the end! Feel free to take a screenshot to get to a PNG (as long as the writing is legible).
 
 - Some software and online websites may be helpful, in particular, you could use:
    Google Slides

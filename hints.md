@@ -81,13 +81,17 @@ What we're looking for here is there should be some load_input functions
 at the very left (or very top),
 then arrows into the various `general_map` and `general_reduce` computations that you did.
 These should be shared if there were multiple questions where you used the same `general_map` function, but only if these shared the same data as input!
-For example Q5/6 and Q8 shoudl be separate nodes bc although they are the same computation, bc they don't use the same intermediate data.
+For example Q5/6 and Q8 should be separate nodes - although they are the same computation, they don't use the same intermediate data.
 Also, your pipelines for Q8a and Q8b should be drawn as separate nodes because they use different input than Q7.
+
+On the other hand, nodes should be drawn the same if they use exactly the same input dataset or are the exact same computation on that dataset. For example, because q1 and q2 use the same input dataset with the same level of parallelism, draw the two inputs nodes the same.
 
 Remember that your Q16a, Q16b, and Q16c pipelines should use different
 nodes, as they differ on the level of parallelism. It's OK to draw these
 as all starting from one (unparallelized) dataset and then splitting into three
 parallelized versions, if that's how your code is structured.
+
+Don't worry about the specific labels on your nodes, as long as they are clearly indicate with what question they are (e.g., `q8_input`, `q8_map`, `q8_reduce`). You may choose to annotate the exact lambda function used below the node if you choose, but this is not required.
 
 ## Part 3
 

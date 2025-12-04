@@ -28,8 +28,9 @@ If you aren't sure of the type of the output, please post a question on Piazza.
 # Spark boilerplate (remember to always add this at the top of any Spark file)
 import pyspark
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName("DataflowGraphExample").getOrCreate()
-sc = spark.sparkContext
+if __name__ == "__main__":
+    spark = SparkSession.builder.appName("DataflowGraphExample").getOrCreate()
+    sc = spark.sparkContext
 
 # Additional imports
 import pytest
@@ -202,7 +203,7 @@ def q5(rdd):
 which digit is most common, with what frequency?
 And which is the least common, with what frequency?
 
-(If there are ties, you may answer any of the tied digits.)
+In case of ties, we will accept any letter that is one of the tied digits.
 
 The digit should be either an integer 0-9 or a character '0'-'9'.
 Frequency is the number of occurences of each value.
@@ -261,7 +262,7 @@ def q7(rdd):
     raise NotImplementedError
 
 """
-8. Does the answer change if we have the numbers from 1 to 100,000,000?
+8. Does the answer change if we have the numbers from 1 to 10,000,000?
 
 Make a version of both pipelines from Q6 and Q7 for this case.
 You will need a new load_input function.
@@ -269,10 +270,8 @@ You will need a new load_input function.
 Notes:
 - The functions q8_a and q8_b don't have input parameters; they should call
   load_input_bigger directly.
-- Please ensure that each of q8a and q8b runs in at most 3 minutes.
-- If you are unable to run up to 100 million on your machine within the time
-  limit, please change the input to 10 million instead of 100 million.
-  If it is still taking too long even for that,
+- Please ensure that each of q8a and q8b runs in a time limit of at most 3 minutes.
+- If your code is taking too long to run,
   you may need to change the number of partitions.
   For example, one student found that setting number of partitions to 100
   helped speed it up.
