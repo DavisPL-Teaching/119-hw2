@@ -37,7 +37,7 @@ You will also need to do the same thing to q8_a, q8_b, and q16_a, q16_b, q16_c:
 
     def q16_c(N=None, P=None):
 
-Finally, your Q20 pipeline also uses a similar dataset as the above, please also make that one parametric:
+Finally, if your Q20 pipeline also uses a similar dataset as the above, please also make that one parametric:
 
     def q20(N=None, P=None):
 
@@ -46,26 +46,26 @@ Don't make any other changes to the function signatures.
 Here, the argument N = None is an optional parameter that, if specified, gives the size of the input
 to be considered, and P = None is an optional parameter that, if specifed, gives the level of parallelism
 (number of partitions) in the RDD.
+You will need to make all of the above functions work with the new signatures.
 
-You will need to make both functions work with the new signatures.
 Be careful to check that the above changes should preserve the existing functionality of part1
-(so python3 part1.py should still give the same output as before!)
+(so `python3 part1.py` should still give the same output as before!)
 
 Once this is done, define a *new* version of the PART_1_PIPELINE, below,
 that takes as input the parameters N and P.
 (This time, you don't have to consider the None case.)
 You should not modify the existing PART_1_PIPELINE.
 
-You may either delete the parts of the code that save the output file, or change these to a different output file like part1-answers-temp.txt.
-
-- Please note: Spark will have issues if you load the `sc.SparkContext` more than once! This is why in Part 1
-  we have it so that sc.SparkContext is only loaded if part1.py is run directly.
+You may either delete the parts of the code that save the output file, or change these
+to a different output file like part1-answers-temp.txt.
 """
 
 # Imports and spark context
 import part1
 import pyspark
 from pyspark.sql import SparkSession
+# Spark will have issues if you load the `sc.SparkContext` more than once! This is why we have
+# if __name___ == "__main__" in part 1 and part 3.
 if __name__ == "__main__":
     spark = SparkSession.builder.appName("DataflowGraphExample").getOrCreate()
     sc = spark.sparkContext
@@ -77,8 +77,8 @@ def PART_1_PIPELINE_PARAMETRIC(N, P):
     P = parallelism (number of partitions)
     (You can copy the code here), but make the following changes:
     - load_input should use an input of size N.
-    - load_input_bigger (including q8_a and q8_b) should use an input of size N.
-    - both of these should return an RDD with level of parallelism P (number of partitions = P).
+    - load_input_bigger (including q8 and q16) should use an input of size N.
+    - all functions should use an RDD with level of parallelism P (number of partitions = P).
     """
     raise NotImplementedError
 
@@ -99,14 +99,14 @@ using five levels of parallelism:
 
 For each level of parallelism, you should measure the throughput and latency as the number of input
 items increases, using the following input sizes:
-- N = 1, 10, 100, 1000, 10_000, 100_000, 1_000_000
+- N = 1, 10, 100, 1000, 10_000, 100_000, 1_000_000, 3_000_000
 
 - Note that the larger sizes may take a while to run (for example, up to 10 minutes). You can try with smaller sizes to test your code first.
 
 - **Time limit:** The entire part1.py plus part3.py should run in at most 30 minutes total!
   Here is a reference point from our testing of the official solution:
   - `time python3 part1.py`: about 30 seconds
-  - `time python3 part3.py`: about 5 minutes
+  - `time python3 part3.py`: about 12 minutes
 
 You can generate any plots you like (for example, a bar chart or an x-y plot on a log scale,)
 but store them in the following 10 files,
