@@ -139,6 +139,29 @@ and the latency of any individual input row is the same as the latency of the en
 That is why we are assuming the latency will just be the running time of the entire dataset.
 
 - Please set `NUM_RUNS` to `1` if you haven't already. Note that this will make the values for low numbers (like `N=1`, `N=10`, and `N=100`) vary quite unpredictably.
+
+===== Warning! =====
+
+If your code is taking way too long to run, or if the latency seems the same for all runs, read here!
+
+Python lambdas are weird! If using a Python lambda to call into your PART_1_PIPELINE_PARAMETRIC, you need
+to do it like so:
+
+  lambda N=N, P=P: PART_1_PIPELINE_PARAMETRIC(N, P)
+
+The reason for the N=N, P=P is so that the PART_1_PIPELINE_PARAMETRIC captures N and P by value, rather
+than by reference.
+If you debug the code by having it print N and P on iteration, you will see that they all default to the
+latest value of N, even when you vary N using a for loop - because N is one variable, all references to
+N will remain the same.
+
+To check if this is occuring, check your latency plot! Latency should not be constant, it should increase for
+the larger runs.
+
+This is a well-known issue in Python when working with lambdas.
+For further reading, see for example:
+https://stackoverflow.com/questions/69326838/how-to-capture-a-value-in-a-python-closure
+https://www.reddit.com/r/ProgrammingLanguages/comments/bxxx7x/python_closures_are_capturing_by_reference_should/
 """
 
 # Copy in ThroughputHelper and LatencyHelper
