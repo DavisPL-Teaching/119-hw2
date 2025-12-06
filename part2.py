@@ -40,6 +40,9 @@ Your dataflow graph should have one node for:
 
    **In other words:** Two operators in your graph should be drawn as the same node only if they compute exactly the same data transformation (or action) on exactly the same input data (and partitioned/parallelized in exactly the same way).
 
+   NB: It would also be valid to think of Q16 as being a "repartition" operator, which changes the level of parallelism.
+   However, please draw the nodes for Q16 separately rather than as chained operators onto the same load_input node.
+
 === Grading Notes ===
 
 Please follow the following additional grading notes:
