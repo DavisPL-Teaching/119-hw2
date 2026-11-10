@@ -1,17 +1,19 @@
 # ECS 119 Homework 2: Parallel and Distributed Pipelines
 
-**Due date: Monday, Nov 24, 11:59pm**
+**Due date: Monday, Nov 23, 11:59pm**
 
-**Released early:** on Nov 12. Please note that minor changes may follow in the following two class periods (Friday and Monday) and would be announced on Piazza and pushed to the repository.
-This homework will cover material from Lecture 5, so we have not yet covered this material in class, but you are welcome to get started on it if you like.
+**Released early:** on Nov 9.
+This homework will cover material from Lecture 5, which we have not yet covered in class.
+It also ties back into the material from Lecture 4 (especially parts 2 and 3).
+You are welcome to get started on it if you like.
 
 This homework will explore building parallel data pipelines in PySpark and MapReduce.
 There are 3 parts.
 
 ## Getting Started
 
-Clone this repository to your own machine (or open up a Codespace).
-Important: please do not create a "fork"! If you work on your
+Clone or download this repository to your own machine.
+Please do not create a public fork! If you work on your
 own copy, it should be a private repository.
 Please see further instructions in `github_help.md`.
 
@@ -49,6 +51,6 @@ We cannot give credit to code that doesn't run on our setup!
 - Don't rename any functions or methods or change the function signatures unless asked to do so.
 
 - As discussed in the syllabus, a small number of points on each homework (at most 10% of the grade) are reserved for style points.
-This also includes whether your free response answers are present and thoughtful.
-Here are some things to consider: are your variable names chosen appropriately? Have you added comments with `#` or docstrings with `"""` where appropriate? Have you removed any obsolete, unused code blocks, functions, or variables?
-(This includes removing `#TODO` and `raise NotImplementedError`!)
+Here are some things to consider: are your variable names chosen appropriately? Have you added comments with `#` or docstrings with `"""` where appropriate? Are your free response answers are present and thoughtful?
+And, have you removed any obsolete, unused code blocks, functions, or variables?
+(This includes removing `#TODO` and `raise NotImplementedError`).
