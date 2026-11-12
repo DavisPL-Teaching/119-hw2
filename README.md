@@ -19,7 +19,7 @@ Please see further instructions in `github_help.md`.
 
 Then open up and complete `part1.py`, `part2.py`, and `part3.py`.
 You will need a working installation of PySpark.
-For Windows users, we recommend GitHub Codespaces.
+For Windows users, we recommend using WSL.
 
 If you get stuck, try taking a look at the file `hints.md`.
 

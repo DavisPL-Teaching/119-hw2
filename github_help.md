@@ -34,14 +34,13 @@ git push origin --all
 
 ### Submitting on Gradescope
 
-Lastly, when it comes to submission time:
+Lastly, when it comes time to submit:
 
 - Gradescope should allow you to log in via GitHub and submit your code that way.
+
 - Make sure you check over the files that Gradescope includes to ensure that it has gotten the latest version of all of your changes.
 
-- A similar process should work if you are editing via Codespaces on your private repository.
-
-- If you are editing via Codespaces on the official repository, you will need to download the files to your machine manually before submitting. Make sure you include all of your changes to all three files.
+- If you are editing via GitHub codespaces, you will need to download the files to your machine manually before submitting. Make sure you include all of your changes to all three files.
 
 Of course, this is optional, if you prefer you can download the repository to your computer (work locally on it without publishing online) and just upload as a `.zip` file.
 
