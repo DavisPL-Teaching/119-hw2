@@ -28,7 +28,9 @@ If you aren't sure of the type of the output, please post a question on Piazza.
 # Spark boilerplate (remember to always add this at the top of any Spark file)
 import pyspark
 from pyspark.sql import SparkSession
-if __name__ == "__main__":
+
+import sys
+if __name__ == "__main__" or "pytest" in sys.modules:
     spark = SparkSession.builder.appName("DataflowGraphExample").getOrCreate()
     sc = spark.sparkContext
 
